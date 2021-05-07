@@ -3,17 +3,20 @@
 # include <string>
 # include <ctime>
 # include <cstdlib>
+# include <iostream>
 # include "Zombie.hpp"
-
-
 
 class ZombieHorde {
 
 	public:
 		ZombieHorde(int n);
+		~ZombieHorde();
+
+		void	announce();
 
 	private:
-		Zombie	*zombies = Zombie()[20];
+		Zombie	*zombies;
+		int		n;
 };
 
 #endif

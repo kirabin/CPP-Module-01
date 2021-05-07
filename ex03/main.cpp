@@ -1,11 +1,15 @@
 #include "Zombie.hpp"
 #include "ZombieHorde.hpp"
 
-
-// clang++ Zombie.cpp main.cpp ZombieHorde .cpp
+// TODO: Proper c++ naming
+// clang++ main.cpp Zombie.cpp ZombieHorde.cpp
 int main()
 {
-	
+	srand (time(NULL));
+	ZombieHorde* zombieHorde = new ZombieHorde(12);
 
+	zombieHorde->announce();
+
+	delete zombieHorde;
 	return 0;
 }

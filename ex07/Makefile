@@ -1,6 +1,6 @@
-NAME = megaphone
+NAME = replace
 FLAGS = -Wall -Wextra -Werror
-SRC =
+SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 RED = \033[31m
@@ -19,11 +19,8 @@ shout_clean:
 shout_test:
 	@echo "$(ORANGE)Testing$(NO_COLOR)"
 
-%.o: %.cpp
-	clang++ $(FLAGS) -o $@ -c $<
-
-$(NAME): $(OBJ)
-	clang++ $(FLAGS) -o $(NAME) $(OBJ)
+$(NAME): $(SRC)
+	clang++ $(FLAGS) -o $(NAME) $(SRC)
 
 clean: shout_clean
 	rm -f $(OBJ)
@@ -32,3 +29,9 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+test:
+	./$(NAME) test_file 1 22
+
+test_2:
+	./$(NAME) test_file 11 2

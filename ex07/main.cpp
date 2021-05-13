@@ -2,47 +2,56 @@
 #include <string>
 #include <fstream>
 
-using std::ifstream;
-using std::ofstream;
-using std::string;
-using std::cout;
-using std::endl;
+void	replace_strings(std::string s1, std::string s2, std::ifstream &in, std::ofstream &out) {
+	std::string	line;
+	size_t		found = 0;
 
-void	replace_strings(string s1, string s2, ifstream &in, ofstream &out) {
-	string	line;
-	size_t	found;
-
-	while (getline(in, line)) {
-		cout << line << endl;
+	while (std::getline(in, line)) {
+		std::cout << line << std::endl;
+		found = 0;
 		while (true) {
-			found = line.find(s1);
-			if (found != string::npos)  // TODO: string as a namespace?
+			found = line.find(s1, found);
+			if (found != std::string::npos) {
 				line.replace(found, s1.length(), s2);
+				found += s2.length();
+			}
 			else
 				break;
 		}
-		cout << line << endl << endl;
+		std::cout << line << std::endl << std::endl;
 		out << line << "\n";
 	}
 }
 
 int main(int argc, char const *argv[])
 {
-	ifstream	in_file;
-	ofstream	out_file;
+	std::ifstream	in_file;
+	std::ofstream	out_file;
 
 	if (argc == 4) {
-		string	filename = argv[1];
-		string	s1 = argv[2];
-		string	s2 = argv[3];
+		std::string	filename = argv[1];
+		std::string	s1 = argv[2];
+		std::string	s2 = argv[3];
+
+		if (s1.empty() || s2.empty()) {
+			std::cout << "Error: One of the strings is empty. Read subject!" << std::endl;
+			return (0);
+		}
 
 		in_file.open(filename);
+		if (!in_file) {
+			std::cout << "Error: No such file '" << filename << "' exists" << std::endl;
+			return 0;
+		}
 		out_file.open(filename + ".replace");
 
 		replace_strings(s1, s2, in_file, out_file);
 
 		in_file.close();
 		out_file.close();
+	}
+	else {
+		std::cout << "Error: not enough arguments" << std::endl;
 	}
 	return 0;
 }

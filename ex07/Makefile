@@ -24,6 +24,7 @@ $(NAME): $(SRC)
 
 clean: shout_clean
 	rm -f $(OBJ)
+	rm -f *.replace
 
 fclean: clean
 	rm -f $(NAME)
@@ -31,7 +32,7 @@ fclean: clean
 re: fclean all
 
 test:
-	./$(NAME) test_file 1 22
+	./$(NAME) file 1 22
 
 test_2:
-	./$(NAME) test_file 11 2
+	./$(NAME) file 11 2

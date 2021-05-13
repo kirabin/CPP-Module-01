@@ -1,18 +1,17 @@
 #include "Pony.hpp"
 
-void	ponyOnTheStack(string name, int age) {
-	Pony	pony = Pony(name, age);
+void	ponyOnTheStack(std::string name, int age) {
+	Pony	pony(name, age);
 }
 
-Pony	*ponyOnTheHeap(string name, int age) {
+Pony	*ponyOnTheHeap(std::string name, int age) {
 	Pony	*pony = new Pony(name, age);
 	return pony;
 }
 
-// clang++ -Wall -Wextra -Werror Pony.cpp main.cpp
 int	main()
 {
-	Pony *heap_pony = ponyOnTheHeap("Stacky", 1);
+	Pony	*heap_pony = ponyOnTheHeap("Stacky", 1);
 
 	ponyOnTheStack("Heapy", 600);
 	delete heap_pony;

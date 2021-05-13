@@ -1,13 +1,13 @@
 #include "Pony.hpp"
 
-Pony::Pony(string name, int age) {
+Pony::Pony(std::string name, int age) {
 	this->name = name;
 	this->age = age;
 	this->_legs = 4;
 	this->color = 0x443322;
-	cout << "Pony named " << this->name << " was born" << endl;
+	std::cout << "Pony named " << this->name << " was born" << std::endl;
 }
 
 Pony::~Pony() {
-	cout << "Pony named " << this->name << " died" << endl;
+	std::cout << "Pony named " << this->name << " died" << std::endl;
 }

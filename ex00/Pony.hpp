@@ -3,22 +3,18 @@
 # include <string>
 # include <iostream>
 
-using std::string;
-using std::cout;
-using std::endl;
-
 class Pony {
 
 public:
-	Pony(string name, int age);
+	Pony(std::string name, int age);
 	~Pony();
 
-	string			name;
-	int				age;
-	unsigned int	color;
+	std::string			name;
+	int					age;
+	unsigned int		color;
 
 private:
-	int				_legs;
+	int					_legs;
 
 };
 

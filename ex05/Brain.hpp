@@ -2,16 +2,15 @@
 # define BRAIN_HPP
 # include <iostream>
 # include <sstream>
-
-using std::string;
+# include <string>
 
 class Brain {
 
 	public:
-		string	identify() const;
+		std::string identify() const;
 
 	private:
-		string	_address;
+		std::string _address;
 };
 
 #endif

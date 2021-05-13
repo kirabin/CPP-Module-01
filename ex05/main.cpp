@@ -1,7 +1,6 @@
 #include "Brain.hpp"
 #include "Human.hpp"
 
-// clang++ main.cpp Human.cpp Brain.cpp
 int main()
 {
 	Human bob;

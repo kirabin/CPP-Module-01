@@ -15,8 +15,8 @@ class ZombieHorde {
 		void	announce();
 
 	private:
-		Zombie	*zombies;
-		int		n;
+		int		_n;
+		Zombie*	_zombies;
 };
 
 #endif

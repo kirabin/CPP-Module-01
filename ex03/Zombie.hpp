@@ -2,8 +2,7 @@
 # define ZOMBIE_HPP
 # include <string>
 # include <iostream>
-
-using std::string;
+# include <cstdlib>
 
 class Zombie {
 
@@ -15,8 +14,8 @@ class Zombie {
 		void	randomize();
 
 	private:
-		int			type;
-		std::string	name;
+		int			_type;
+		std::string	_name;
 };
 
 #endif

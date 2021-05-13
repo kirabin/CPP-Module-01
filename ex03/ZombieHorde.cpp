@@ -1,30 +1,31 @@
 #include "ZombieHorde.hpp"
 
-ZombieHorde::ZombieHorde(int n) {
+ZombieHorde::ZombieHorde(int n) : _n(n), _zombies(NULL) {
 	std::cout << "ZombieHorde created" << std::endl;
 
-	this->n = n;
 	if (n > 0) {
-		this->zombies = new Zombie[n];
+		this->_zombies = new Zombie[n];
 		std::cout << "Zombies created" << std::endl;
 
 		for (int i = 0; i < n; i++) {
-			this->zombies[i].randomize();
+			this->_zombies[i].randomize();
 		}
 	}
 	else {
-		std::cout << "0 Zombie Horde";
+		std::cout << "0 Zombie Horde" << std::endl;
 	}
 }
 
 void	ZombieHorde::announce() {
-	for (int i = 0; i < this->n; i++) {
-		this->zombies[i].announce();
+	for (int i = 0; i < this->_n; i++) {
+		this->_zombies[i].announce();
 	}
 }
 
 ZombieHorde::~ZombieHorde() {
-	std::cout << "Destroying Zombies" << std::endl;
-	delete [] this->zombies;
+	if (this->_n > 0) {
+		std::cout << "Destroying Zombies" << std::endl;
+		delete [] this->_zombies;
+	}
 	std::cout << "Destroying ZombieHorde" << std::endl;
 }

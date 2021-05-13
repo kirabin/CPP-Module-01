@@ -35,9 +35,8 @@ int main(int argc, char const *argv[])
 
 		if (s1.empty() || s2.empty()) {
 			std::cout << "Error: One of the strings is empty. Read subject!" << std::endl;
-			return (0);
+			return 0;
 		}
-
 		in_file.open(filename);
 		if (!in_file) {
 			std::cout << "Error: No such file '" << filename << "' exists" << std::endl;

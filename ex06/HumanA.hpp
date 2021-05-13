@@ -4,19 +4,16 @@
 # include <iostream>
 # include "Weapon.hpp"
 
-using std::string;
-using std::cout;
-using std::endl;
-
 class HumanA {
 
 	public:
-		HumanA(const string name, Weapon &weapon); // TODO: passing reference to function, dive deep
+		HumanA(const std::string name, Weapon& weapon);
 		void	attack();
+		void	getDamage();
 
 	private:
 		const Weapon&	_weapon;
-		string	_name;
+		std::string		_name;
 };
 
 #endif

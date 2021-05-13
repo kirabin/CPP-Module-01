@@ -2,8 +2,7 @@
 #include "HumanB.hpp"
 #include "Weapon.hpp"
 
-// clang++ main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
-int main(int argc, char const *argv[])
+int main()
 {
 	{
 		Weapon club = Weapon("crude spiked club");

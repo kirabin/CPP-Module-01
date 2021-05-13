@@ -1,14 +1,14 @@
 #include "HumanB.hpp"
 #include "Weapon.hpp"
 
-HumanB::HumanB(const string name) {
+HumanB::HumanB(const std::string name) {
 	this->_name = name;
 }
 
 void	HumanB::attack() {
-	cout << this->_name << " attacks using " << this->_weapon->getType() << endl;
+	std::cout << this->_name << " attacks using " << this->_weapon->getType() << std::endl;
 }
 
 void	HumanB::setWeapon(Weapon& weapon) {
-	this->_weapon = &weapon; // LEARN: gets addres of original passed weapon, not weapon reference
+	this->_weapon = &weapon;
 }

@@ -12,8 +12,8 @@ class Zombie {
 		void	announce();
 
 	private:
-		int			type;
-		std::string	name;
+		int			_type;
+		std::string	_name;
 };
 
 #endif

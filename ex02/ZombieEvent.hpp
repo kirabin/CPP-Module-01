@@ -5,8 +5,6 @@
 # include <cstdlib>
 # include "Zombie.hpp"
 
-using std::string;
-
 class ZombieEvent {
 
 	public:
@@ -17,7 +15,7 @@ class ZombieEvent {
 		Zombie*	newZombie(std::string name);
 
 	private:
-		int		type;
+		int		_type;
 };
 
 #endif

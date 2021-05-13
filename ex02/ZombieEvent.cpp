@@ -1,29 +1,19 @@
 #include "ZombieEvent.hpp"
 
-ZombieEvent::ZombieEvent() {
-	this->type = 0;
-}
-
+ZombieEvent::ZombieEvent() : _type(0) {}
 
 Zombie*	ZombieEvent::newZombie(std::string name) {
-	Zombie*	zombie = new Zombie(this->type, name);
-
-	return zombie;
+	return new Zombie(this->_type, name);
 }
 
 Zombie*	ZombieEvent::randomChump() {
-	string	names[5] = {"Bomber", "Villager", "Rusher", "Fighter", "Benjamin"};
-	int		randInt;
-	int		randType;
+	std::string	names[5] = {"Bomber", "Villager", "Rusher", "Fighter", "Benjamin"};
 
-	srand (time(NULL));
-	randInt = rand() % 5;
-	randType = rand() % 13 % 5;
-	Zombie*	zombie = new Zombie(randType, names[randInt]);
+	Zombie*	zombie = new Zombie(rand() % 17 % 5, names[rand() % 5]);
 	zombie->announce();
 	return zombie;
 }
 
 void	ZombieEvent::setZombieType(int type) {
-	this->type = type;
+	this->_type = type;
 }

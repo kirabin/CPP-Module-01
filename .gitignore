@@ -1,4 +1,4 @@
-ex07/file.replace
+ex07/*.replace
 ex07/replace
 # Prerequisites
 *.d
